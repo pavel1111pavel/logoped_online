@@ -32,9 +32,15 @@ section {
     display: flex;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
+    position: relative;
+    overflow: hidden;
+    
+    background: 
+        linear-gradient(135deg, rgba(63, 52, 184, 0.03) 0%, rgba(211, 192, 229, 0.8) 100%),
+        url('/static/images/background.png') center/cover;
 }
+
 
 .general-content {
     flex: 1;
@@ -143,6 +149,9 @@ section {
     background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
     color: white;
     text-align: center;
+        background: 
+        
+        url('/static/images/background_footer.png') center/cover;
 }
 
 .interactive h2 {
