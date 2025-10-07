@@ -1,0 +1,282 @@
+/* Reset и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%; /* Предотвращает выход за пределы */
+    overflow-x: hidden; /* Скрывает горизонтальный скролл */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /* Дополнительная страховка */
+    width: 100%;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Общие стили для секций */
+section {
+    padding: 80px 0;
+}
+
+/* === HERO/GENERAL BLOCK === */
+.general {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.general-content {
+    flex: 1;
+    padding: 0 60px;
+}
+
+.general-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.general-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* CSS - стили для ссылки-кнопки */
+.general-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.general-button:hover {
+    transform: translateY(-3px);
+    color: white;
+    text-decoration: none;
+}
+
+.general-image {
+    flex: 1;
+    text-align: center;
+}
+
+.general-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* === ADVANTAGES BLOCK === */
+.advantages {
+    background: #f8f9fa;
+}
+
+.advantages-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.advantages-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.advantage-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.4s ease;
+}
+
+/* При 1260px переходим на вертикаль */
+@media (max-width: 1260px) {
+    .advantages-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .advantage-card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #667eea;
+}
+
+/* === INTERACTIVE BLOCK === */
+.interactive {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    color: white;
+    text-align: center;
+}
+
+.interactive h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+/* Стили для игры-кликера */
+.clicker-game p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#counter {
+    font-weight: bold;
+    color: #ffe66d;
+}
+
+.clicker-game button {
+    background: #ffe66d;
+    color: #333;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clicker-game button:hover {
+    background: #ffd700;
+    transform: scale(1.05);
+}
+
+/* === FORM BLOCK === */
+.cta-form {
+    background: #2c3e50;
+    color: white;
+}
+
+.cta-form h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 2px solid transparent;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.contact-form button {
+    width: 100%;
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: #2980b9;
+}
+
+/* === FOOTER === */
+.footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.contact-info h3 {
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.contact-info address p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    color: #3498db;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
