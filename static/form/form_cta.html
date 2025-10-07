@@ -1,0 +1,53 @@
+<section class="cta-form" id="form">
+    <div class="container">
+        <h2>Оставьте заявку</h2>
+        <p class="form-subtitle">Мы свяжемся с вами в течение 15 минут</p>
+        
+        <form class="contact-form" id="contactForm">
+            <!-- Имя -->
+            <div class="form-group">
+                <label for="name">Имя *</label>
+                <input type="text" id="name" name="name" required 
+                       placeholder="Введите ваше имя">
+            </div>
+
+            <!-- Телефон -->
+            <div class="form-group">
+                <label for="phone">Телефон *</label>
+                <input type="tel" id="phone" name="phone" required 
+                       placeholder="+7 (999) 999-99-99">
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" 
+                       placeholder="your@email.com">
+            </div>
+
+            <!-- Сообщение -->
+            <div class="form-group">
+                <label for="message">Сообщение</label>
+                <textarea id="message" name="message" rows="4" 
+                          placeholder="Расскажите о вашем проекте..."></textarea>
+            </div>
+
+            <!-- Чекбокс согласия -->
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="agreement" name="agreement" required>
+                <label for="agreement">
+                    Я соглашаюсь с <a href="/privacy" target="_blank">политикой конфиденциальности</a>
+                </label>
+            </div>
+
+            <!-- Кнопка отправки -->
+            <button type="submit" class="submit-button">
+                <span class="button-text">Отправить заявку</span>
+                <span class="button-loading" style="display: none;">Отправка...</span>
+            </button>
+        </form>
+
+        <!-- Сообщения об успехе/ошибке -->
+        <div id="formMessage" style="display: none;"></div>
+    </div>
+</section>
