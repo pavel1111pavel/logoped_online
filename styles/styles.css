@@ -245,6 +245,10 @@ section {
     background: #2980b9;
 }
 
+.form-subtitle {
+  text-align: center;
+}
+
 /* === FOOTER === */
 .footer {
     background: #1a1a1a;

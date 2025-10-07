@@ -1,4 +1,3 @@
-// Загрузка и инициализация формы
 class FormLoader {
     constructor() {
         this.init();
@@ -67,17 +66,49 @@ class FormLoader {
         }
     }
     
-    async submitForm(formData) {
-        // Здесь будет реальная отправка на сервер
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        
-        // Для демо - 90% успешных отправок
-        if (Math.random() > 0.1) {
-            return { success: true };
-        } else {
-            throw new Error('Server error');
-        }
+async submitForm(formData) {
+    const data = Object.fromEntries(formData);
+    const config = window.TELEGRAM_CONFIG || {};
+    console.log(config.BOT_TOKEN);
+    // === НАСТРОЙТЕ ЭТИ ДВЕ ПЕРЕМЕННЫЕ ===
+    const BOT_TOKEN = window.TELEGRAM_BOT_TOKEN; // Замените на ваш токен
+    const CHAT_ID = window.TELEGRAM_CHAT_ID; // Замените на ваш chat_id
+    // ====================================
+    
+    const message = `
+🎯 НОВАЯ ЗАЯВКА С САЙТА
+
+👤 Имя: ${data.name}
+📞 Телефон: ${data.phone}
+📧 Email: ${data.email || 'Не указан'}
+
+🕒 Время: ${new Date().toLocaleString('ru-RU')}
+🌐 Страница: ${window.location.href}
+    `.trim();
+    
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: message,
+            parse_mode: 'HTML'
+        })
+    });
+    
+    const result = await response.json();
+    
+    if (!response.ok || !result.ok) {
+        console.error('Telegram error:', result);
+        throw new Error('Не удалось отправить заявку');
     }
+    
+    return result;
+}
     
     showSuccessMessage(messageElement, text) {
         messageElement.textContent = text;
