@@ -2,4 +2,4 @@
 .env
 .env.local
 .env.production
-./js/config.js
+js/config.js
